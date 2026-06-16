@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Imagens em BS5</title>
+    <style>
+        body{
+             background: linear-gradient(to right, #000000 0%, #000a26 100%);
+            color: rgba(240, 248, 255, 0.704);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+         
+        }
+        .rounded-circle{
+            width: 350px;
+            height: 330px;
+        }
+        .rounded{
+
+            width: 290px;
+            height: 400px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center " >
+        <h1 class="text-center bg-dark">Guia Prático: Imagens no bootstrap 5</h1>
+        <!-- Formas de imagem -->
+         <section>
+            <h2>Formas de imagem</h2>
+            <div class="row" >
+                <div class="col-sm-4" >
+                    <p>Imagens com cantos arredondados</p>
+                    <img src="imagem1.jpg" class="rounded" alt="cantos_arredondados">
+                </div>
+                <div class="col " >
+                    <p>Imagem Circular</p>
+                    <img src="imagem2.jpg" class="rounded-circle" alt="circular">
+                </div>
+                <div class="col" >
+                    <p>Imagem em miniatura</p>
+                    <img src="imagem3.jpg" class="img-thumbnail" alt="miniatura">
+                </div>
+            </div>
+         </section>
+         <!-- Alinhamento -->
+          <section>
+            <h2 >Alinhamento de Imagens img</h2>
+            <p>Imagens à esqurda e à direita</p>
+            <img src="imagem1.jpg" class="float-start" alt="esqueda">
+            <img src="imagem2.jpg" class="float-end" alt="direita">
+            <div class="clearfix"></div> 
+            <!-- limpar flutuação -->
+            <div class="p-3 text-center">
+                <p>Centralizar a Imagem</p>
+                <img src="imagem3.jpg" class="mx-auto d-block" alt="">
+            </div>
+          </section>
+    </div>
+</body>
+</html>

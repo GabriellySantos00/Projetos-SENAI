@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <title>Slider Modal BS5</title>
+</head>
+<body>
+    <!-- Carrossel de Imagens -->
+     <div id="slider1" class="carousel slide mt-5 mx-auto d-block" style="max-width: 500px;" >
+        <div class="carousel-inner" style="max-height: 500px;" >
+            <div class="carousel-item active" >
+                <img src="imagem1.jpg" class="d-block w-100" alt="img1">
+            </div>
+            <div class="carousel-item" >
+                <img src="imagem2.jpg" class="d-block w-100" alt="img2">
+            </div>
+            <div class="carousel-item">
+                <img src="imagem3.jpg" class="d-block w-100" alt="img3">
+
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slider1" data-bs-slide="prev" >
+            <span class="carousel-control-prev-icon" ></span>
+        </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#slider1" data-bs-slide="next" >
+            <span class="carousel-control-next-icon" ></span>
+        </button>
+     </div>
+
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal" >
+        Ver Detalhes do Projeto
+     </button>
+     <!-- Estrutura Modal --> 
+      <div class="modal fade mt-5" id="meuModal" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalhes Técnicos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    Imagens 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>
+</html>
