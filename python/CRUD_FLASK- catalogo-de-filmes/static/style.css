@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f6eef7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #7b3f8c;
+    text-align: center;
+}
+
+.botao, button {
+    display: inline-block;
+    background: #9b5de5;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.lista {
+    margin-top: 25px;
+}
+
+.card {
+    background: #faf4ff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #9b5de5;
+}
+
+.card a {
+    margin-right: 10px;
+    color: #7b3f8c;
+    font-weight: bold;
+}
+
+.deletar {
+    color: #d62828 !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 100px;
+}

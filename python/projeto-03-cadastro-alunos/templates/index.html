@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dashboard | Sistema Escolar</title>
+</head>
+<body class="saas-theme">
+    <div class="dashboard-container">
+        <header class="main-header">
+            <div class="header-content">
+                <h1>Gestão de Alunos</h1>
+                <p>Gerencie sua base de estudantes com eficiência.</p>
+            </div>
+            <a href="{{ url_for('add') }}" class="btn-primary-saas">
+                <span>+</span> Novo Aluno
+            </a>
+        </header>
+
+        <div class="table-card animate-in">
+            <table class="saas-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do Aluno</th>
+                        <th>Nascimento</th>
+                        <th>Endereço</th>
+                        <th>Turma</th>
+                        <th class="text-right">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr class="table-row">
+                        <td class="col-id">#{{ student.id }}</td>
+                        <td class="col-name">{{ student.name }}</td>
+                        <td>{{ student.dob }}</td>
+                        <td>{{ student.address }}</td>
+                        <td><span class="status-badge">{{ student.class }}</span></td>
+                        <td class="text-right">
+                            <div class="actions-group">
+                                <a href="{{ url_for('edit', id=student.id) }}" class="btn-icon edit" title="Editar">
+                                    ✏️
+                                </a>
+                                <form action="{{ url_for('delete', id=student.id) }}" method="post" class="inline-form" onsubmit="return confirm('Deseja excluir este registro?')">
+                                    <button type="submit" class="btn-icon delete" title="Deletar">
+                                        🗑️
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

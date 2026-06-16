@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
+    <title>Novo Aluno | Premium Admin</title>
+</head>
+<body class="saas-bg">
+    <div class="form-container animate-slide-up">
+        <header class="form-header">
+            <a href="{{ url_for('index') }}" class="back-button">← Voltar para a lista</a>
+            <h1>Novo Aluno</h1>
+            <p>Preencha os dados para registrar um novo estudante.</p>
+        </header>
+
+        <form action="{{ url_for('add') }}" method="post" class="premium-form">
+            <div class="input-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" name="name" id="name" placeholder="Ex: Maria Oliveira" required>
+            </div>
+
+            <div class="input-group">
+                <label for="dob">Data de Nascimento</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+
+            <div class="input-group">
+                <label for="address">Endereço Residencial</label>
+                <input type="text" name="address" id="address" placeholder="Rua, Número, Cidade" required>
+            </div>
+
+            <div class="input-group">
+                <label for="class">Turma / Módulo</label>
+                <input type="text" name="class" id="class" placeholder="Ex: 1B - Desenvolvimento" required>
+            </div>
+
+            <button type="submit" class="btn-save">Finalizar Cadastro</button>
+        </form>
+    </div>
+</body>
+</html>

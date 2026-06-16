@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #02040a;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hud {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 10;
+    width: 320px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(5, 10, 20, 0.72);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(120, 180, 255, .25);
+    box-shadow: 0 20px 60px rgba(0,0,0,.55);
+}
+
+.hud h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.hud p {
+    color: #aeb8c9;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #426cff, #b833ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+.ranking {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 10;
+    width: 260px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(5, 10, 20, 0.72);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(120, 180, 255, .25);
+    box-shadow: 0 20px 60px rgba(0,0,0,.55);
+}
+
+.ranking h2 {
+    margin-top: 0;
+}

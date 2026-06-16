@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Diário de Filmes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1> Meu Catálogo de Filmes e Séries</h1>
+
+        <a class="botao" href="/cadastrar">Cadastrar novo</a>
+
+        <div class="lista">
+            {% for filme in filmes %}
+                <div class="card">
+                    <h2>{{ filme.nome }}</h2>
+                    <p><strong>Gênero:</strong> {{ filme.genero }}</p>
+                    <p><strong>Onde assistiu:</strong> {{ filme.plataforma }}</p>
+                    <p><strong>Status:</strong> {{ filme.status }}</p>
+                    <p><strong>Nota:</strong> {{ filme.nota }}</p>
+                    <p><strong>Comentário:</strong> {{ filme.comentario }}</p>
+
+                    <a href="/editar/{{ filme.id }}">Editar</a>
+                    <a class="deletar" href="/deletar/{{ filme.id }}">Excluir</a>
+                </div>
+            {% else %}
+                <p>Nenhum filme cadastrado ainda.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

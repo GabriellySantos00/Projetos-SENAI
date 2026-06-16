@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "JOAO PEDRO DELMIRO ROCHA",
+        "nascimento": "2007-08-15",
+        "cpf": "34567584938",
+        "email": "delmiroj15@gmail.com",
+        "senha": "joaodev"
+    },
+    {
+        "nome": "Vitor hugo",
+        "nascimento": "2007-08-15",
+        "cpf": "23456789089",
+        "email": "delmiroj15@gmail.com",
+        "senha": "12345"
+    },
+    {
+        "nome": "Rebeca",
+        "nascimento": "2007-08-12",
+        "cpf": "098765748569",
+        "email": "vilma@gamail.com",
+        "senha": "1234"
+    }
+]

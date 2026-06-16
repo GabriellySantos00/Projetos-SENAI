@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Editar Filme ou Série</h1>
+
+    <form method="POST">
+        <input type="text" name="nome" value="{{ filme.nome }}" required>
+        <input type="text" name="genero" value="{{ filme.genero }}" required>
+        <input type="text" name="plataforma" value="{{ filme.plataforma }}" required>
+
+        <select name="status">
+            <option {% if filme.status == "Quero assistir" %}selected{% endif %}>Quero assistir</option>
+            <option {% if filme.status == "Assistindo" %}selected{% endif %}>Assistindo</option>
+            <option {% if filme.status == "Finalizado" %}selected{% endif %}>Finalizado</option>
+        </select>
+
+        <input type="number" name="nota" value="{{ filme.nota }}" min="0" max="10">
+        <textarea name="comentario">{{ filme.comentario }}</textarea>
+
+        <button type="submit">Atualizar</button>
+    </form>
+
+    <a href="/">Voltar</a>
+</div>
+
+</body>
+</html>

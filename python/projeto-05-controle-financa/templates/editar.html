@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Transação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container" style="max-width: 600px; margin-top: 40px;">
+        
+        <div class="card-saldo animar-entrada">
+            <h1 class="efeito-escrita">Modificar Registro</h1>
+            <p style="color: #64748b; margin: 0;">Altere os dados abaixo para atualizar o banco de dados.</p>
+        </div>
+
+        <section class="animar-entrada">
+            <form action="{{ url_for('editar_transacao', id=transacao.id) }}" method="POST" style="grid-template-columns: 1fr;">
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" name="descricao" value="{{ transacao.descricao }}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="valor">Valor (R$)</label>
+                    <input type="number" step="0.01" id="valor" name="valor" value="{{ transacao.valor }}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="entrada" {{ 'selected' if transacao.tipo == 'entrada' }}>Entrada</option>
+                        <option value="saida" {{ 'selected' if transacao.tipo == 'saida' }}>Saída</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input type="date" id="data" name="data" value="{{ transacao.data.strftime('%Y-%m-%d') }}" required>
+                </div>
+                
+                <div style="display: flex; gap: 12px; margin-top: 8px;">
+                    <button type="submit" style="flex: 2; background-color: var(--success);">Confirmar Atualização</button>
+                    <a href="{{ url_for('index') }}" style="flex: 1; text-align: center; background-color: #64748b; color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px;">Voltar</a>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

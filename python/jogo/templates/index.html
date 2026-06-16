@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Midnight City Racer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="hud">
+    <h1>FORZA HORIZON 7</h1>
+    <p>Use A/D ou ←/→ para desviar</p>
+
+    <div class="infos">
+        <span>Pontos: <strong id="pontos">0</strong></span>
+        <span>Velocidade: <strong id="velocidade">1.0</strong>x</span>
+    </div>
+
+    <button onclick="iniciarJogo()">INICIAR</button>
+</div>
+
+<div class="ranking">
+    <h2>Ranking</h2>
+
+    {% for jogador in ranking %}
+        <p>{{ loop.index }}º {{ jogador.nome }} — {{ jogador.pontos }} pts</p>
+    {% else %}
+        <p>Nenhuma pontuação ainda.</p>
+    {% endfor %}
+</div>
+
+<div id="game"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="/static/jogo.js"></script>
+</body>
+</html>

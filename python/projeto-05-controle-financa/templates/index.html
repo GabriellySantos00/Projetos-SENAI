@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Finanças Pessoais</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        
+        <header class="card-saldo animar-entrada">
+            <h1 class="efeito-escrita">Controle de Finanças Pessoais</h1>
+            <h2>Saldo Atual: 
+                <span class="{{ 'saldo-positivo' if saldo_atual >= 0 else 'saldo-negativo' }}">
+                    R$ {{ "%.2f"|format(saldo_atual) }}
+                </span>
+            </h2>
+        </header>
+
+        <section class="animar-entrada">
+            <h3 style="margin-left: 5px;">Nova Transação</h3>
+            <form action="{{ url_for('add_transacao') }}" method="POST">
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" name="descricao" required placeholder="Ex: Salário, Mercado">
+                </div>
+                <div class="form-group">
+                    <label for="valor">Valor (R$)</label>
+                    <input type="number" step="0.01" id="valor" name="valor" required placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <section class="animar-entrada">
+            <h3 style="margin-left: 5px;">Histórico de Transações</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transacao in transacoes %}
+                    <tr>
+                        <td>{{ transacao.data.strftime('%d/%m/%Y') }}</td>
+                        <td>{{ transacao.descricao }}</td>
+                        <td class="{{ 'txt-entrada' if transacao.tipo == 'entrada' else 'txt-saida' }}">
+                            {{ transacao.tipo.capitalize() }}
+                        </td>
+                        <td>R$ {{ "%.2f"|format(transacao.valor) }}</td>
+                        <td>
+                            <a href="{{ url_for('editar_transacao', id=transacao.id) }}" class="btn-acao btn-editar">Editar</a>
+                            <a href="{{ url_for('deletar_transacao', id=transacao.id) }}" class="btn-acao btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este registro?')">Excluir</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5" style="text-align: center; color: #64748b;">Nenhuma transação cadastrada até o momento.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
