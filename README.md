@@ -1,23 +1,35 @@
 # Projetos SENAI
 
-Este repositório reúne atividades, exercícios práticos e projetos desenvolvidos durante minha formação no curso Técnico em Análise e Desenvolvimento de Sistemas.
+Repositório com projetos desenvolvidos durante o curso Técnico em Desenvolvimento de Sistemas no SENAI.
 
-Ao longo do curso, foram aplicados conceitos de desenvolvimento web, programação, banco de dados, modelagem de sistemas, desenvolvimento de aplicações e boas práticas de software, utilizando diferentes tecnologias e ferramentas.
+## Projetos Principais
 
-O objetivo deste repositório é registrar minha evolução acadêmica, documentar os conhecimentos adquiridos e servir como portfólio dos trabalhos realizados durante a formação.
+### Quitanda Tomate Cru
+E-commerce desenvolvido para estudos
 
-## Tecnologias utilizadas
+**Pasta:** [python/projeto-07-quitanda](./python/projeto-07-quitanda)
 
-- HTML5
-- CSS3
+### Gestão de Estoque
+Sistema de controle e gerenciamento de estoque
+
+**Pasta:**  [python/projeto-09-gestao-estoque](./python/projeto-09-gestao-estoque)
+
+### Gestão de Alunos
+Sistema de cadastro e gerenciamento de alunos
+
+**Pasta:** [python/projeto-03-cadastro-alunos](./python/projeto-03-cadastro-alunos)
+
+### Controle de Finanças
+Sistema para organização e controle financeiro
+
+**Pasta:**  [python/projeto-05-controle-financa](./python/projeto-05-controle-financa)
+
+## Tecnologias Utilizadas
+
+- HTML
+- CSS
 - JavaScript
-- Bootstrap
 - Python
 - Flask
 - MySQL
-- Git e GitHub
-
-## Autor
-
-**Gabrielly Santos de Oliveira**  
-Estudante de Análise e Desenvolvimento de Sistemas
+- Bootstrap
